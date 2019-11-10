@@ -7,6 +7,7 @@
 
     <ItemGroup>
         <None Include="2015\Day1Part1.fsx" />
+        <None Include="2015\Day1Part2.fsx" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
