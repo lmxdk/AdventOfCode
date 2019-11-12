@@ -6,8 +6,12 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <None Include="2015\Day1Part1.fsx" />
-        <None Include="2015\Day1Part2.fsx" />
+        <Compile Include="2015\Helpers.fs" />
+        <Compile Include="2015\Day1Part1.fs" />
+        <Compile Include="2015\Day1Part2.fs" />
+        <Compile Include="2015\Day2Part1.fs" />
+        <Content Include="2015\Input\Day1Input.txt" />
+        <Content Include="2015\Input\Day2Part1Input.txt" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 
