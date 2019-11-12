@@ -5,9 +5,10 @@ open Day1Part1
 open Day1Part2
 open Day2Part1
 open Day2Part2
+open Day3Part1
 
 [<EntryPoint>]
 let main argv =
     //printfn "Hello World from F#!"
-    solveDay2Part2
+    solveDay3Part1
     0 // return an integer exit code
