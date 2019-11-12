@@ -2,7 +2,7 @@
     open Helpers
 
     let solveDay2Part1 =
-        let packageLines = readInputLines "Day2Part1Input.txt"
+        let packageLines = readInputLines "Day2Input.txt"
 
         let getSize (line:string) =
             let sizes = line.Split 'x'

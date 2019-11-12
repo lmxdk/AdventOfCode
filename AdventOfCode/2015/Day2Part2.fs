@@ -3,7 +3,7 @@
 
     //How many total feet of ribbon should they order?
     let solveDay2Part2 =
-        let packageLines = readInputLines "Day2Part1Input.txt"
+        let packageLines = readInputLines "Day2Input.txt"
 
         let getSize (line:string) =
             let sizes = line.Split 'x'
