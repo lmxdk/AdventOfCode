@@ -8,9 +8,9 @@ open Day2Part2
 open Day3Part1
 open Day3Part2
 open Day4Part1
+open Day4Part2
 
 [<EntryPoint>]
 let main argv =
-    //printfn "Hello World from F#!"
-    solveDay4Part1
-    0 // return an integer exit code
+    solveDay4Part2
+    0
