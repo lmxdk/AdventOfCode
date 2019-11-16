@@ -1,9 +1,6 @@
 ﻿module Day5Part1
-    open System.Text
-    open System.Security.Cryptography
     open Helpers
 
-    exception HashFound
     let solveDay5Part1 =
         let words = readInputLines "Day5Input.txt"
 
