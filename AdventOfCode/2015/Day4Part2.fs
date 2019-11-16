@@ -1,9 +1,9 @@
-﻿module Day4Part1
+﻿module Day4Part2
     open System.Text
     open System.Security.Cryptography
 
     exception HashFound
-    let solveDay4Part1 =
+    let solveDay4Part2 =
         let prefix = "yzbqklnj"
         let md5 = MD5.Create()
 
@@ -16,7 +16,8 @@
                                   |> Encoding.ASCII.GetBytes
                 let hash = Array.append prefixBytes numberBytes
                            |> md5.ComputeHash
-                if (hash.[0] = 0uy && hash.[1] = 0uy && hash.[2] < 16uy) then
+
+                if (hash.[0] = 0uy && hash.[1] = 0uy && hash.[2] = 0uy) then
                     raise HashFound
                 else
                     number <- number + 1
