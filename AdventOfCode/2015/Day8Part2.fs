@@ -12,9 +12,7 @@
 
         let memoryDifference =
             lines |>
-            Array.map (fun line ->
-                let result = countChars line
-                result) |>
+            Array.map (fun line -> countChars line) |>
             Array.sum
 
         printf "%d" memoryDifference
