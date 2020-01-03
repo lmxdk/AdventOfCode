@@ -1,4 +1,5 @@
 ﻿module Day9Part1
+    open Day1Part1
     open System
     open System.Collections.Generic
     open Helpers
@@ -9,7 +10,7 @@
         member this.Name = name
         member this.getConnections = connections
 
-    let solveDay9Part1 =
+    let solveDay9 isBetterRoute startDistance =
         let lines = readInputLines "Day9Input.txt"
 
         let nodesByName = new Dictionary<string, Node>()
@@ -36,7 +37,7 @@
             Array.iter readConnection
 
         let mutable bestRoute = [||]
-        let mutable bestDistance = Int32.MaxValue
+        let mutable bestDistance = startDistance
 
         let nodes = [|for node in nodesByName.Values do node|]
         let routes = enumeratePermutations nodes
@@ -58,9 +59,21 @@
 
         for route in routes do
             let distance = getDistance route
-            if distance < bestDistance then
+            let better = isBetterRoute distance bestDistance
+            if better then
                 bestRoute <- route.[0..lenMinusOne]
                 printRoute distance bestRoute
                 bestDistance <- distance
 
         printRoute bestDistance bestRoute
+
+
+    let solveDay9Part1 () =
+        let comparison distance bestDistance =
+            distance < bestDistance
+        solveDay9 comparison Int32.MaxValue
+
+    let solveDay9Part2 () =
+        let comparison distance bestDistance =
+            distance > bestDistance
+        solveDay9 comparison Int32.MinValue
