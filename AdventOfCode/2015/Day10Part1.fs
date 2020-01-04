@@ -1,34 +1,36 @@
 ﻿module Day10Part1
-    open System
-    open System.Collections.Generic
-    open Helpers
-    let rec lookAndSay lastNumber count items =
-        match items with
-        | number :: tail ->
+    open System.Text
+
+    let lookAndSay items =
+        let mutable lastNumber = 'Ø'
+        let mutable count = 0
+        let newItems = new StringBuilder()
+
+        for number in items do
             if lastNumber = number then
-                lookAndSay lastNumber (count+1) tail
-            else if lastNumber = -1 then
-                lookAndSay number 1 tail
+                count <- count + 1
+            else if lastNumber = 'Ø' then
+                count <- 1
             else
-                let result = lookAndSay number 1 tail
-                List.append [count; lastNumber] result
-        | _ ->
-            [count; lastNumber]
+                newItems.Append(count) |> ignore
+                newItems.Append(lastNumber) |> ignore
+                count <- 1
 
-    let rec lookAndSayStep items iteration =
-        if iteration = 40 then
-            List.length items
-        else
-            let newItems = lookAndSay -1 0 items
-            newItems |>
-                List.map (fun i -> sprintf "%i" i) |>
-                List.fold (+) "" |>
-                printfn "%s"
+            lastNumber <- number
 
-            lookAndSayStep newItems (iteration + 1)
+        newItems.Append(count) |> ignore
+        newItems.Append(lastNumber) |> ignore
+        newItems.ToString()
 
+    let lookAndSayStep items =
+        let mutable newItems = items
+        for i = 1 to 40 do
+            newItems <- lookAndSay newItems
+            //printfn "%s" newItems
+            printf "%i " i
+        newItems
 
     let solveDay10Part1 =
-        let result = lookAndSayStep [1] 0
-        //let result = lookAndSayStep [3;1;1;3;3;2;2;1;1;3] 0
-        printf "%i" result
+        //let result = lookAndSayStepStr "1"
+        let result = lookAndSayStep "3113322113"
+        printf "%i" result.Length
