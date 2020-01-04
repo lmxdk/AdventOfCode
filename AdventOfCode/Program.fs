@@ -1,6 +1,6 @@
 ﻿// Learn more about F# at http://fsharp.org
 
-open System
+(*open System
 open Day1Part1
 open Day1Part2
 open Day2Part1
@@ -16,10 +16,11 @@ open Day6Part2
 open Day7Part1
 open Day7Part2
 open Day8Part1
-open Day9Part1
-open Day10Part1
+open Day9Part
+open Day10Part*)
+open Day11Part1
 
 [<EntryPoint>]
 let main argv =
-    solveDay10Part2 ()
+    solveDay11Part1
     0

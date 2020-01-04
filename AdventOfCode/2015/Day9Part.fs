@@ -1,5 +1,4 @@
-﻿module Day9Part1
-    open Day1Part1
+﻿module Day9Part
     open System
     open System.Collections.Generic
     open Helpers

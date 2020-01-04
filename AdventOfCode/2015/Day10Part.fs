@@ -1,10 +1,10 @@
-﻿module Day10Part1
+﻿module Day10Part
     open System.Text
 
     let lookAndSay items =
         let mutable lastNumber = 'Ø'
         let mutable count = 0
-        let newItems = new StringBuilder()
+        let newItems = StringBuilder()
 
         for number in items do
             if lastNumber = number then
