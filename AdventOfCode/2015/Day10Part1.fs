@@ -22,15 +22,17 @@
         newItems.Append(lastNumber) |> ignore
         newItems.ToString()
 
-    let lookAndSayStep items =
+    let lookAndSayStep items iterations =
         let mutable newItems = items
-        for i = 1 to 40 do
+        for i = 1 to iterations do
             newItems <- lookAndSay newItems
             //printfn "%s" newItems
             printf "%i " i
-        newItems
+        printf "%i" newItems.Length
 
-    let solveDay10Part1 =
+    let solveDay10Part1 () =
         //let result = lookAndSayStepStr "1"
-        let result = lookAndSayStep "3113322113"
-        printf "%i" result.Length
+        lookAndSayStep "3113322113" 40
+
+    let solveDay10Part2 () =
+        lookAndSayStep "3113322113" 50
