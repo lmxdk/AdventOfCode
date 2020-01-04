@@ -1,9 +1,7 @@
-﻿module Day11Part1
-    open System.Text.RegularExpressions
+﻿module Day11
     open System.Text
 
-    let solveDay11Part1 =
-        let lastPassword = "hxbxwxba"
+    let solveDay11 (lastPassword:string) =
         let password = StringBuilder(lastPassword)
         let len = lastPassword.Length-1
 
@@ -53,3 +51,9 @@
             ignore |> ignore
 
         printfn "%O" password
+
+    let solveDay11Part1 () =
+        solveDay11 "hxbxwxba"
+
+    let solveDay11Part2 () =
+        solveDay11 "hxbxxyzz"
