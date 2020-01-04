@@ -23,8 +23,8 @@
         <Compile Include="2015\Day7Part2.fs" />
         <Compile Include="2015\Day8Part1.fs" />
         <Compile Include="2015\Day8Part2.fs" />
-        <Compile Include="2015\Day9Part1.fs" />
-        <Compile Include="2015\Day10Part1.fs" />
+        <Compile Include="2015\Day9Part.fs" />
+        <Compile Include="2015\Day10Part.fs" />
         <Content Include="2015\Input\Day1Input.txt" />
         <Content Include="2015\Input\Day2Input.txt" />
         <Content Include="2015\Input\Day3Input.txt" />
