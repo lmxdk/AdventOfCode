@@ -19,10 +19,11 @@ open Day8Part1
 open Day9
 open Day10
 open Day11
-open Day12Part1*)
-open Day12Part2
+open Day12Part1
+open Day12Part2*)
+open Day13
 
 [<EntryPoint>]
 let main argv =
-    solveDay12Part2
+    solveDay13Part1
     0
