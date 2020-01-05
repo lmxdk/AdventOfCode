@@ -26,7 +26,8 @@
         <Compile Include="2015\Day9.fs" />
         <Compile Include="2015\Day10.fs" />
         <Compile Include="2015\Day11.fs" />
-        <Compile Include="2015\Day12.fs" />
+        <Compile Include="2015\Day12Part1.fs" />
+        <Compile Include="2015\Day12Part2.fs" />
         <Content Include="2015\Input\Day1Input.txt" />
         <Content Include="2015\Input\Day2Input.txt" />
         <Content Include="2015\Input\Day3Input.txt" />
@@ -37,6 +38,10 @@
         <Content Include="2015\Input\Day9Input.txt" />
         <Content Include="2015\Input\Day12Input.txt" />
         <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     </ItemGroup>
 
 </Project>

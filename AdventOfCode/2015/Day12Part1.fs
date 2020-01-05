@@ -1,4 +1,4 @@
-﻿module Day12
+﻿module Day12Part1
     open Helpers
     open System.Text.RegularExpressions
 
