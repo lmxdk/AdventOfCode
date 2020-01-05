@@ -38,7 +38,8 @@
         <Content Include="2015\Input\Day8Input.txt" />
         <Content Include="2015\Input\Day9Input.txt" />
         <Content Include="2015\Input\Day12Input.txt" />
-        <Content Include="2015\Input\Day13Input.txt" />
+        <Content Include="2015\Input\Day13Input1.txt" />
+        <Content Include="2015\Input\Day13Input2.txt" />
         <Compile Include="Program.fs" />
     </ItemGroup>
 

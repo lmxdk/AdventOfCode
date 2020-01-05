@@ -9,8 +9,8 @@
         member this.Name = name
         member this.getPreferences = preferences
 
-    let solveDay13Part1 =
-        let lines = readInputLines "Day13Input.txt"
+    let solveDay13 part =
+        let lines = readInputLines (sprintf "Day13Input%i.txt" part)
         let personsByName = Dictionary<string, Person>()
 
         let getPerson name =
@@ -55,3 +55,6 @@
                 bestHappiness <- happiness
 
         printfn "%O" bestHappiness
+
+    let solveDay13Part1 () = solveDay13 1
+    let solveDay13Part2 () = solveDay13 2
