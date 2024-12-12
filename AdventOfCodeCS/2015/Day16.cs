@@ -32,21 +32,23 @@ namespace AdventOfCodeCS._2015
                 for (var i = 2; i < tokens.Length; i += 2)
                 {
                     var count = Convert.ToInt32(tokens[i + 1]);
-                    var compareToGoal = tokens[i] switch
+                    var (compareToGoal, action) = tokens[i] switch
                     {
-                        "children" => childrenGoal,
-                        "cats" => catsGoal,
-                        "samoyeds" => samoyedsGoal,
-                        "pomeranians" => pomeraniansGoal,
-                        "akitas" => akitasGoal,
-                        "vizslas" => vizslasGoal,
-                        "goldfish" => goldfishGoal,
-                        "trees" => treesGoal,
-                        "cars" => carsGoal,
-                        "perfumes" => perfumesGoal,
+                        "children" => (childrenGoal, Equals),
+                        "cats" => (catsGoal, GreaterThan),
+                        "samoyeds" => (samoyedsGoal, Equals),
+                        "pomeranians" => (pomeraniansGoal, LessThan),
+                        "akitas" => (akitasGoal, Equals),
+                        "vizslas" => (vizslasGoal, Equals),
+                        "goldfish" => (goldfishGoal, LessThan),
+                        "trees" => (treesGoal, GreaterThan),
+                        "cars" => (carsGoal, Equals),
+                        "perfumes" => (perfumesGoal, Equals),
                     };
 
-                    if (count == compareToGoal)
+                    if ((action == Equals && count == compareToGoal) ||
+                        (action == LessThan && count < compareToGoal) ||
+                        (action == GreaterThan && count > compareToGoal))
                     {
                         score++;
                     }
@@ -69,7 +71,10 @@ namespace AdventOfCodeCS._2015
             Console.WriteLine(bestIndex);
             Console.WriteLine(bestScore);
         }
-        
+
+        public const int Equals = 0;
+        public const int GreaterThan = 1;
+        public const int LessThan = 2;
         public const string Input = @"Sue 1: goldfish: 6, trees: 9, akitas: 0
 Sue 2: goldfish: 7, trees: 1, akitas: 0
 Sue 3: cars: 10, akitas: 6, perfumes: 7
