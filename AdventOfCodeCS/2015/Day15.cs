@@ -18,36 +18,26 @@ namespace AdventOfCodeCS._2015
             
             for (var sugarCount = 0; sugarCount < maxSpoons; sugarCount++)
             {
-                for (var sprinkleCount = 0; sprinkleCount < maxSpoons; sprinkleCount++)
+                var maxSprinkles = maxSpoons - sugarCount; 
+                for (var sprinkleCount = 0; sprinkleCount < maxSprinkles; sprinkleCount++)
                 {
-                    for (var candyCount = 0; candyCount < maxSpoons; candyCount++)
+                    var maxCandy = maxSprinkles - sprinkleCount; 
+                    for (var candyCount = 0; candyCount < maxCandy; candyCount++)
                     {
-                        for (var chocolateCount = 0; chocolateCount < maxSpoons; chocolateCount++)
+                        var chocolateCount = maxCandy - candyCount;
+                        var capacity =   sugarCount * sugar.Capacity +   sprinkleCount * sprinkles.Capacity +   candyCount * candy.Capacity +   chocolateCount * chocolate.Capacity;
+                        var durability = sugarCount * sugar.Durability + sprinkleCount * sprinkles.Durability + candyCount * candy.Durability + chocolateCount * chocolate.Durability;
+                        var flavor =     sugarCount * sugar.Flavor +     sprinkleCount * sprinkles.Flavor +     candyCount * candy.Flavor +     chocolateCount * chocolate.Flavor;
+                        var texture =    sugarCount * sugar.Texture +    sprinkleCount * sprinkles.Texture +    candyCount * candy.Texture +    chocolateCount * chocolate.Texture;
+                        if (capacity <= 0 || durability <= 0 || flavor <= 0 || texture <= 0)
                         {
-                            var spoonCount = sugarCount + sprinkleCount + candyCount + chocolateCount;
-                            if (spoonCount < maxSpoons)
-                            {
-                                continue;
-                            }
-                            if (spoonCount > maxSpoons)
-                            {
-                                break;
-                            }
-                            
-                            var capacity =   sugarCount * sugar.Capacity +   sprinkleCount * sprinkles.Capacity +   candyCount * candy.Capacity +   chocolateCount * chocolate.Capacity;
-                            var durability = sugarCount * sugar.Durability + sprinkleCount * sprinkles.Durability + candyCount * candy.Durability + chocolateCount * chocolate.Durability;
-                            var flavor =     sugarCount * sugar.Flavor +     sprinkleCount * sprinkles.Flavor +     candyCount * candy.Flavor +     chocolateCount * chocolate.Flavor;
-                            var texture =    sugarCount * sugar.Texture +    sprinkleCount * sprinkles.Texture +    candyCount * candy.Texture +    chocolateCount * chocolate.Texture;
-                            if (capacity <= 0 || durability <= 0 || flavor <= 0 || texture <= 0)
-                            {
-                                continue;
-                            }
+                            continue;
+                        }
 
-                            var part1Sum = capacity * durability * flavor * texture;
-                            if (part1Sum > part1Max)
-                            {
-                                part1Max = part1Sum;
-                            }
+                        var part1Sum = capacity * durability * flavor * texture;
+                        if (part1Sum > part1Max)
+                        {
+                            part1Max = part1Sum;
                         }
                     }
                 }    
