@@ -15,6 +15,7 @@ namespace AdventOfCodeCS._2015
             var candy = new Ingredient("Candy", -1,  0, 4,  0, 1);
             var chocolate = new Ingredient("Chocolate", 0,  0, -2,  2, 8);
             var part1Max = 0;
+            var part2Max = 0;
             
             for (var sugarCount = 0; sugarCount < maxSpoons; sugarCount++)
             {
@@ -29,21 +30,28 @@ namespace AdventOfCodeCS._2015
                         var durability = sugarCount * sugar.Durability + sprinkleCount * sprinkles.Durability + candyCount * candy.Durability + chocolateCount * chocolate.Durability;
                         var flavor =     sugarCount * sugar.Flavor +     sprinkleCount * sprinkles.Flavor +     candyCount * candy.Flavor +     chocolateCount * chocolate.Flavor;
                         var texture =    sugarCount * sugar.Texture +    sprinkleCount * sprinkles.Texture +    candyCount * candy.Texture +    chocolateCount * chocolate.Texture;
+                        var calories =   sugarCount * sugar.Calories +   sprinkleCount * sprinkles.Calories +   candyCount * candy.Calories +   chocolateCount * chocolate.Calories;
                         if (capacity <= 0 || durability <= 0 || flavor <= 0 || texture <= 0)
                         {
                             continue;
                         }
 
-                        var part1Sum = capacity * durability * flavor * texture;
-                        if (part1Sum > part1Max)
+                        var sum = capacity * durability * flavor * texture;
+                        if (sum > part1Max)
                         {
-                            part1Max = part1Sum;
+                            part1Max = sum;
+                        }
+
+                        if (calories == 500 && sum > part2Max)
+                        {
+                            part2Max = sum;
                         }
                     }
                 }    
             }
             
             Console.WriteLine(part1Max);
+            Console.WriteLine(part2Max);
 
         }
     }
