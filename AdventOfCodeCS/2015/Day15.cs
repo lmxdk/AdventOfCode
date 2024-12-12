@@ -8,7 +8,6 @@ namespace AdventOfCodeCS._2015
     {
         public void Run()
         {
-
             var maxSpoons = 100;
             var sugar = new Ingredient("Sugar", 3,  0, 0,  -3, 2);
             var sprinkles = new Ingredient("Sprinkles", -3,  3, 0,  0, 9);
