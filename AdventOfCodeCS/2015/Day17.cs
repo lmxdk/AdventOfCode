@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections;
-using Google.OrTools.LinearSolver;
-using Google.OrTools.Sat;
 
 namespace AdventOfCodeCS._2015
 {
@@ -43,7 +40,7 @@ namespace AdventOfCodeCS._2015
                     }
                 }
             }
-            
+
             Console.WriteLine(permutations);
 
         }

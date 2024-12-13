@@ -7,7 +7,7 @@ namespace AdventOfCodeCS
     {
         static void Main(string[] args)
         {
-            new Day17().Run();
+            new Day18().Run();
         }
     }
 }

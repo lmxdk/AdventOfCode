@@ -1,6 +1,4 @@
 ﻿using System;
-using Google.OrTools.LinearSolver;
-using Google.OrTools.Sat;
 
 namespace AdventOfCodeCS._2015
 {
@@ -15,13 +13,13 @@ namespace AdventOfCodeCS._2015
             var chocolate = new Ingredient("Chocolate", 0,  0, -2,  2, 8);
             var part1Max = 0;
             var part2Max = 0;
-            
+
             for (var sugarCount = 0; sugarCount < maxSpoons; sugarCount++)
             {
-                var maxSprinkles = maxSpoons - sugarCount; 
+                var maxSprinkles = maxSpoons - sugarCount;
                 for (var sprinkleCount = 0; sprinkleCount < maxSprinkles; sprinkleCount++)
                 {
-                    var maxCandy = maxSprinkles - sprinkleCount; 
+                    var maxCandy = maxSprinkles - sprinkleCount;
                     for (var candyCount = 0; candyCount < maxCandy; candyCount++)
                     {
                         var chocolateCount = maxCandy - candyCount;
@@ -46,9 +44,9 @@ namespace AdventOfCodeCS._2015
                             part2Max = sum;
                         }
                     }
-                }    
+                }
             }
-            
+
             Console.WriteLine(part1Max);
             Console.WriteLine(part2Max);
 
@@ -57,11 +55,11 @@ namespace AdventOfCodeCS._2015
 
     public class Ingredient
     {
-        public string Name { get; } 
-        public int Capacity { get; } 
-        public int Durability { get; } 
-        public int Flavor { get; } 
-        public int Texture { get; } 
+        public string Name { get; }
+        public int Capacity { get; }
+        public int Durability { get; }
+        public int Flavor { get; }
+        public int Texture { get; }
         public int Calories { get; }
 
         public Ingredient(string name, int capacity, int durability, int flavor, int texture, int calories)
